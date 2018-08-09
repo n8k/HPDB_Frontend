@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+$red: 				#E4605E;
+$light-red:		#E47087;
+$light-grey:	#CBCDCD;
+$grey:				#707272;
+
+.totally-centered {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-item: center; 
+	align-items: center; 
+	align-content: center;
+}
+
+.centered-line {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-item: center; 
+	align-items: center; 
+	align-content: center;
+	flex-wrap: nowrap;
+}
+
+.mat-icon 					{text-indent: -0.7em; }
+.brand-red 					{background-color: $red; }
+.brand-light-red 		{background-color: $light-red; }
+.brand-light 				{background-color: $light-grey; }
+.brand-grey 				{background-color: $grey; }
