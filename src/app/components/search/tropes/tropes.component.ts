@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'tropes-search-component',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tropes.component.scss']
 })
 export class TropesComponent implements OnInit {
+	@Input() trope: FormGroup;
 
   constructor() { }
 

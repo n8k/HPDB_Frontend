@@ -22,6 +22,10 @@ import { RestangularConfigFactory } from './shared/restConfig';
 import { RestangularModule,
 				 Restangular 				} from 'ngx-restangular';
 
+// Forms
+// import { FormsModule 				} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
+
 // Components
 import { AppComponent 			} from './app.component';
 import { HeaderComponent 		} from './components/header/header.component';
@@ -52,6 +56,8 @@ import { TropesComponent 		} from './components/search/tropes/tropes.component';
     FontAwesomeModule,
     RoutingModule,
     MaterialModule,
+    // FormsModule,
+    ReactiveFormsModule,
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [

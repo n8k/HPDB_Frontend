@@ -1,16 +1,18 @@
 <div class="container is-widescreen">
 	<div class="notification">
  
-		<basic-search-component></basic-search-component>
+		<basic-search-component [basic]="basicSearchForm.controls"></basic-search-component>
 
-		<crime-search-component></crime-search-component>
+		<crime-search-component [crime]="crimeSearchForm.controls"></crime-search-component>
 
-		<tropes-search-component></tropes-search-component>
+		<tropes-search-component [trope]="tropeSearchForm.controls"></tropes-search-component>
 
-		<director-search-component></director-search-component>
+		<director-search-component [director]="directorSearchForm.controls"></director-search-component>
 
-		<writer-search-component></writer-search-component>
-	
+		<writer-search-component [writer]="writerSearchForm.controls"></writer-search-component>
+
+		<button type="submit">Search</button>
+
 	</div>
 </div>
 
