@@ -1,4 +1,4 @@
-import { baseurl } from 'baseURL';
+import { baseURL } from './baseURL';
 
 export function RestangularConfigFactory (RestangularProvider) {
 	RestangularProvider.setBaseUrl(baseURL);
