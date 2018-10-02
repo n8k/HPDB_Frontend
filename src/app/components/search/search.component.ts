@@ -1,57 +1,46 @@
-import { Component, OnInit 			} from '@angular/core';
+import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+
 // import service goes here
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+	selector: 'app-search',
+	templateUrl: './search.component.html',
+	styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
 
-	basicSearchForm: FormGroup;
-	crimeSearchForm: FormGroup;
-	tropeSearchForm: FormGroup;
-	directorSearchForm: FormGroup;
-	writerSearchForm: FormGroup;
+	mainSearchGroup: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-  }
-
-  ngOnInit() {
-  	this.initializeSearchForms();
-  }
-
-  initializeSearchForms() {
-
-  	this.basicSearchForm = this.fb.group({
-  		seasonNum:'',
-  		episodeNum:'',
-  		title:'',
-  		mood:'',
-  		mainCharacters:[]
-  	});
-
-  	this.crimeSearchForm = this.fb.group({
-  		criminalAct:'',
-  		means:'',
-  		motive:'',
-  		opportunity:'',
-  		perpetrator:'',
-  		victim:''
-  	});
-
-  	this.tropeSearchForm = this.fb.group({
-  		tropes:[],  		
-  	});
-
-  	this.directorSearchForm = this.fb.group({
-  		director:''
-  	});
-
-  	this.writerSearchForm = this.fb.group({
-  		writer:''
-  	});
-  }
+	constructor( @Inject(FormBuilder) fb: FormBuilder) {
+		this.mainSearchGroup = fb.group({
+				'season':'',
+				'episode':'',
+				'title':'',
+				'mood':'',
+				// 'mainCharacters':['']
+				'hastings':false,
+				'lemon':false,
+				'oliver':false,
+				'japp':false,
+				'criminalAct':'',
+				'means':'',
+				'motive':'',
+				'opportunity':'',
+				'perpetrator':'',
+				'victim':''
+				'tropes':[],  		
+				'director':''
+				'writer':''
+			})
 
 }
+
+	ngOnInit() {
+	}
+
+	onSubmit() {
+	}
+
+	}
+

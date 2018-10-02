@@ -4,51 +4,64 @@
 
 <div class="column has-background-light">
 
-	<div class="column columns">
-		<div class="column is-6 field has-addons">
-			<p class="column button is-static totally-centered is-size-5"> Season </p>
-			<p class="control"><input class="column input is-size-5" type="text" placeholder="(1-13)"></p>
+		<div class="columns totally-centered "*ngFor="let item of titleParams;">
+		<div style="padding:1vw"class="field has-addons" >
+			<label
+			class="button is-static is-size-5"
+			style="min-width:36vw"
+			>{{item.display}}
+			</label>
+			<p [formGroup]="basic">
+				<input
+				style="min-width:48vw"
+				class="input is-size-5"
+				type="text"
+				placeholder="{{item.placeholder}}"
+				formControlName="{{item.name}}"
+				></p>
 		</div>
-
-		<div class="column is-6 field has-addons">
-			<p class="column button is-static totally-centered is-size-5"> Episode </p>
-			<p class="control"><input class="column input is-size-5" type="text" placeholder="(varies)"></p>
-		</div>
-	</div>
-
-	<div class="column field has-addons centered-line">
-		<p class="column is-3 button is-static totally-centered is-size-5"> Episode Title </p>
-		<p class="column is-9 control totally-centered"><input class="column input is-size-5" type="text" placeholder="Adventure of... / Murder on..."></p>
-	</div>
-
-<div class="column centered-line">
-	<div class="column button is-static totally-centered is-3 is-size-5">Mood</div>
-
-	<div class="column is-9">
-		<div class="control column centered-line">
-			<label class="radio column is-3 is-size-5"><input type="radio" name="mood">&nbsp;None</label>
-			<label class="radio column is-3 is-size-5"><input type="radio" name="mood">&nbsp;Light</label>
-			<label class="radio column is-3 is-size-5"><input type="radio" name="mood">&nbsp;Serious</label>
-			<label class="radio column is-3 is-size-5"><input type="radio" name="mood">&nbsp;Dark</label>
-		</div>
-
 	</div>
 </div>
 
-<div class="column centered-line">
-	<div class="column button is-static totally-centered is-3 is-size-5">Main characters</div>
+<div class="column">
+	<div class="column button is-static totally-centered is-size-5">Mood</div>
 
-	<div class="column is-9">
-		<div class="control column centered-line">
-			<label class="checkbox column is-size-5"><input type="checkbox" name="main-characters">&nbsp;Hastings</label>
-			<label class="checkbox column is-size-5"><input type="checkbox" name="main-characters">&nbsp;Ms. Lemon</label>
-			<label class="checkbox column is-size-5"><input type="checkbox" name="main-characters">&nbsp;Ms. Oliver</label>
-			<label class="checkbox column is-size-5"><input type="checkbox" name="main-characters">&nbsp;Inspector Japp</label>
+	<div class="column">
+		<div [formGroup]="basic" class="control column centered-line">
+			<div *ngFor="let mood of moods">
+			<label class="radio column is-size-5">
+				<input
+				type="radio"
+				name="mood"
+				id="{{mood.display}}"
+				value="{{mood.value}}"
+				[formControlName]="'mood'">
+				{{mood.display}}
+			</label>
+			</div>
 		</div>
-
 	</div>
 </div>
 
+<div class="column">
+	<div class="column button is-static totally-centered is-size-5">Main Characters</div>
+
+	<div class="column">
+		<div [formGroup]="basic" class="control column centered-line">
+			<div *ngFor="let character of mainCharacters">
+			<label class="radio column is-size-5">
+				<input
+				type="checkbox"
+				value="{{character.value}}"
+				[(ngModel)]="character.checked"
+				[formControlName]="character.value"
+				[checked]="character.checked"
+				>
+				{{character.name}}
+			</label>
+			</div>
+		</div>
+	</div>
 </div>
 
-<br>
+<br> 

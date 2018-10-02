@@ -1,17 +1,26 @@
 <div class="container is-widescreen">
 	<div class="notification">
+
+		<div class="column centered-line">
+    form value: {{ mainSearchGroup.value | json }}
+		</div>
  
-		<basic-search-component [basic]="basicSearchForm.controls"></basic-search-component>
+		<form novalidate [formGroup]="mainSearchGroup" (ngSubmit)="onSubmit()">
 
-		<crime-search-component [crime]="crimeSearchForm.controls"></crime-search-component>
+		<basic-search-component [basic]="mainSearchGroup"></basic-search-component>
 
-		<tropes-search-component [trope]="tropeSearchForm.controls"></tropes-search-component>
+		<crime-search-component></crime-search-component>
 
-		<director-search-component [director]="directorSearchForm.controls"></director-search-component>
+		<tropes-search-component></tropes-search-component>
 
-		<writer-search-component [writer]="writerSearchForm.controls"></writer-search-component>
+		<director-search-component></director-search-component>
+
+		<writer-search-component></writer-search-component>
 
 		<button type="submit">Search</button>
+
+		</form>
+
 
 	</div>
 </div>
