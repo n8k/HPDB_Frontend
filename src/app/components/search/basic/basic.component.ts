@@ -7,7 +7,6 @@ import { FormGroup, ControlContainer } from '@angular/forms';
   styleUrls: ['./basic.component.scss']
 })
 
-
 export class BasicComponent implements OnInit {
 	@Input() basic: FormGroup;
 

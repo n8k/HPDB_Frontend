@@ -10,15 +10,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
 
-	mainSearchGroup: FormGroup;
+	basicSearchGroup: FormGroup;
+	crimeSearchGroup: FormGroup;
 
-	constructor( @Inject(FormBuilder) fb: FormBuilder) {
+	constructor( 
+		@Inject(FormBuilder) fb: FormBuilder
+		) {
 		this.mainSearchGroup = fb.group({
 				'season':'',
 				'episode':'',
 				'title':'',
 				'mood':'',
-				// 'mainCharacters':['']
 				'hastings':false,
 				'lemon':false,
 				'oliver':false,
