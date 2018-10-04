@@ -1,45 +1,22 @@
-<div class="column is-12 box brand-red">
+<div class="column box brand-red">
 	<p class="is-size-4 totally-centered">Director</p>
 </div>
 
-<div class="column is-12 has-background-light">
-	<div class="columns is-mobile">
-		<div class="column is-4">
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;None</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Andrew Grieve</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Andrew Piddington</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Andy Wilson</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Ashley Pearce</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Brian Farnham</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Charles Palmer</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Dan Reed</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;David Moore</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Edward Bennett</label></p>
-		</div>
-
-		<div class="column is-4">
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Hettie Macdonald</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;James Kent</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;John Bruce</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;John Strickland</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Ken Grieve</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Maurice Phillips</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Paul Unwin</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Peter Barber Fleming</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Peter Lydon</label></p>
-		</div>
-
-		<div class="column is-4">
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Phillip Martin</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Renny Rye</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Richard Spence</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Ross Devenish</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Sarah Harding</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Simon Langton</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Stephen Whittaker</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Tom Clegg</label></p>
-			<p><label class="radio"><input type="radio" name="director">&nbsp;&nbsp;Tom Vaughan</label></p>
+<div [formGroup]="director"  class="columns has-background-light">
+	<div class="section" style="padding-left: 6vw;">
+		<div class="columns is-multiline">
+			<div class="column is-one-third" style="padding:0; margin:0;" *ngFor="let d of directors;">
+				<div class="" >
+				<label class="is-size-5">
+				<input
+				type="radio" 
+				value="{{d.value}}"
+				name="director"
+				[formControlName]="'director'"
+				>&nbsp;{{d.value}}</label>
+			</div>
 		</div>
 	</div>
 </div>
+
 <br>

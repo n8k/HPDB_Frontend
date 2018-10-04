@@ -62,8 +62,8 @@ export class SearchComponent implements OnInit {
 				'hostIsMurdered': 						false,
 				'bridgeGame': 								false,
 				'bonVoyage': 									false,
-				'director':'',
-				'writer':''
+				'director':'None',
+				'writer':'None'
 			})
 
 }

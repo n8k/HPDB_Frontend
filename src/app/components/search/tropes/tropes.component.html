@@ -3,16 +3,19 @@
 </div>
 
 <div [formGroup]="trope"  class="columns has-background-light">
-	<div class="columns is-multiline">
-		<div class="column is-one-third" *ngFor="let t of tropes;">
-			<div class="column">
-			<label class="checkbox is-size-5">
-				<input
-				type="checkbox" 
-				value="{{t.checked}}"
-				name="t.name">&nbsp;{{t.display}}</label>
+	<div class="section" style="padding: 0 6vw;">
+		<div class="columns is-multiline">
+			<div class="column is-one-third" *ngFor="let t of tropes;" style="padding:0; margin:0;">
+				<div class="column">
+					<label class="checkbox is-size-5">
+						<input
+							type="checkbox" 
+							value="{{t.checked}}"
+							name="t.name">&nbsp;{{t.display}}</label>
 				</div>
+			</div>
+		</div>
 	</div>
-
 </div>
+
 <br>
