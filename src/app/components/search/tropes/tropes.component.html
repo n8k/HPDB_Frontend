@@ -2,42 +2,17 @@
 	<p class="is-size-4 totally-centered">Tropes</p>
 </div>
 
-<div class="columns has-background-light">
+<div [formGroup]="trope"  class="columns has-background-light">
+	<div class="columns is-multiline">
+		<div class="column is-one-third" *ngFor="let t of tropes;">
+			<div class="column">
+			<label class="checkbox is-size-5">
+				<input
+				type="checkbox" 
+				value="{{t.checked}}"
+				name="t.name">&nbsp;{{t.display}}</label>
+				</div>
+	</div>
 
-	<div class="column is-6">
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot is in love</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot is on holiday</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot commits a crime</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot plays matchmaker</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot enjoys retirement</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot solves a cold case</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot goes to the dentist</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot is mistaken for French</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot tries to prevent a murder</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot tries to prevent other crime</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot is obsessed with symmetry</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot does not punish a guilty party</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Poirot acts as avuncular to a younger lady</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Ms. Lemon uses her filing system</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Ms. Lemon does detective work</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Ms. Lemon is supernatural</label></div>
-	</div>
-	<div class="column is-6">
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings is in love</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings plays golf</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings travels abroad</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings solves the case</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings takes up a hobby</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings is a car enthusiast</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Hastings doesn't understand women</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;A criminal intentionally involves Poirot in the plot</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Episode involves a murder-mystery play or book</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;An event host is murdered at or after the event</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Episode features French vs. English cuisine</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Crime scene is on a train, plane or boat</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Characters play the card game Bridge</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Setting is an archaeological dig</label></div>
-		<div class="column"><label class="checkbox is-size-5"><input type="checkbox" name="trope">&nbsp;Christmas Special</label></div>
-	</div>
 </div>
 <br>
