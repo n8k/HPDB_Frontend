@@ -2,6 +2,90 @@
 	<p class="is-size-4 totally-centered">Tropes</p>
 </div>
 
+<div [formGroup]="trope"  class="column has-background-light" style="margin: 0 2vw;">
+
+		<div class="column button is-static totally-centered is-size-5">Poirot</div>
+		<br>
+		<div class="columns is-multiline">
+			<div class="column is-one-third" *ngFor="let t of poirotTropes;" style="padding:0 1vw; margin:0;">
+				<div class="column">
+					<label class="checkbox is-size-5">
+						<input
+							type="checkbox" 
+							value="{{t.checked}}"
+							name="t.name">&nbsp;{{t.display}}</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="column button is-static totally-centered is-size-5">Hastings</div>
+		<br>
+		<div class="columns is-multiline">
+			<div class="column is-one-third" *ngFor="let t of hastingsTropes;" style="padding:0 1vw; margin:0;">
+				<div class="column">
+					<label class="checkbox is-size-5">
+						<input
+							type="checkbox" 
+							value="{{t.checked}}"
+							name="t.name">&nbsp;{{t.display}}</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="column button is-static totally-centered is-size-5">Ms. Lemon</div>
+		<br>
+		<div class="columns is-multiline">
+			<div class="column is-one-third" *ngFor="let t of lemonTropes;" style="padding:0 1vw; margin:0;">
+				<div class="column">
+					<label class="checkbox is-size-5">
+						<input
+							type="checkbox" 
+							value="{{t.checked}}"
+							name="t.name">&nbsp;{{t.display}}</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="column button is-static totally-centered is-size-5">Other</div>
+		<br>
+		<div class="columns is-multiline">
+			<div class="column is-one-third" *ngFor="let t of otherTropes;" style="padding:0 1vw; margin:0;">
+				<div class="column">
+					<label class="checkbox is-size-5">
+						<input
+							type="checkbox" 
+							value="{{t.checked}}"
+							name="t.name">&nbsp;{{t.display}}</label>
+				</div>
+			</div>
+		</div>
+
+</div>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<div class="column box brand-red" style="margin-bottom:4vw;">
+	<p class="is-size-4 totally-centered">Tropes</p>
+</div>
+
 <div [formGroup]="trope"  class="columns has-background-light">
 	<div class="section" style="padding: 0 6vw;">
 		<div class="columns is-multiline">
@@ -18,4 +102,4 @@
 	</div>
 </div>
 
-<br>
+<br> -->

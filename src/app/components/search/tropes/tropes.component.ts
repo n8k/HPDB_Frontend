@@ -10,39 +10,49 @@ import { FormGroup, ControlContainer } from '@angular/forms';
 export class TropesComponent implements OnInit {
 	@Input() trope: FormGroup;
 
-	tropes = [
-	{name:"poirotTriesToPreventMurder"  , checked:false, display:"Poirot tries to prevent a murder"},
-	{name:"poirotTriesToPreventCrime"   , checked:false, display:"Poirot tries to prevent other crime"},
-	{name:"poirotLenientJudgeAndJury" 	, checked:false, display:"Poirot does not punish a guilty party"},
-	{name:"poirotCompulsiveSymmetry" 	  , checked:false, display:"Poirot is obsessed with symmetry"},
-	{name:"poirotIsReallyBelgian" 			, checked:false, display:"Poirot is mistaken for French"},
-	{name:"poirotSolvesColdCase" 			  , checked:false, display:"Poirot solves a cold case"},
-	{name:"poirotCommitsCrime"					, checked:false, display:"Poirot commits a crime"},
-	{name:"poirotMatchmaker" 					  , checked:false, display:"Poirot plays matchmaker"},
-	{name:"poirotRetirement" 					  , checked:false, display:"Poirot enjoys retirement"},
-	{name:"poirotAvuncular" 						, checked:false, display:"Poirot acts as avuncular to a younger lady"},
-	{name:"poirotOnHoliday" 						, checked:false, display:"Poirot is on holiday"},
-	{name:"poirotSmitten"  						  , checked:false, display:"Poirot is in love"},
-	{name:"poirotDentist" 							, checked:false, display:"Poirot goes to the dentist"},
-	{name:"perpTriesToOutmartPoirot" 	  , checked:false, display:"A criminal intentionally involves Poirot in the plot"},
-	{name:"hastingsLadyPuzzlement"  		, checked:false, display:"Hastings does not understand women"},
-	{name:"hastingsSolvesCase" 				  , checked:false, display:"Hastings solves the case"},
-	{name:"hastingsSmitten" 						, checked:false, display:"Hastings is in love"},
-	{name:"hastingsTravel" 					  	, checked:false, display:"Hastings travels abroad"},
-	{name:"hastingsHobby" 							, checked:false, display:"Hastings takes up a hobby"},
-	{name:"hastingsGolf" 							  , checked:false, display:"Hastings plays golf"},
-	{name:"hastingsCar"  							  , checked:false, display:"Hastings is a car enthusiast"},
-	{name:"msLemonOrderAndMethod" 			, checked:false, display:"Ms. Lemon does detective work"},
-	{name:"msLemonsFilingSystem" 			  , checked:false, display:"Ms. Lemon uses her filing system"},
-	{name:"msLemonSupernatural" 				, checked:false, display:"Ms. Lemon is supernatural"},
+	
+	poirotTropes = [
+	{name:"poirotTriesToPreventMurder"  , checked:false, display:"Tries to prevent murder"},
+	{name:"poirotTriesToPreventCrime"   , checked:false, display:"Tries to prevent other crimes"},
+	{name:"poirotCommitsCrime"					, checked:false, display:"Commits a crime"},
+	{name:"poirotCompulsiveSymmetry" 	  , checked:false, display:"Obsession with symmetry"},
+	{name:"poirotIsReallyBelgian" 			, checked:false, display:"Not French, Belgian"},
+	{name:"poirotSolvesColdCase" 			  , checked:false, display:"Solves a cold case"},
+	{name:"poirotLenientJudgeAndJury" 	, checked:false, display:"Doesn't punish a guilty party"},
+	{name:"poirotMatchmaker" 					  , checked:false, display:"Plays matchmaker"},
+	{name:"poirotRetirement" 					  , checked:false, display:"Enjoys retirement"},
+	{name:"poirotAvuncular" 						, checked:false, display:"Acts as avuncular to a younger lady"},
+	{name:"poirotOnHoliday" 						, checked:false, display:"Is on holiday"},
+	{name:"poirotSmitten"  						  , checked:false, display:"Is in love"},
+	{name:"poirotDentist" 							, checked:false, display:"Goes to the dentist"}
+	];
+
+	hastingsTropes = [
+	{name:"hastingsLadyPuzzlement"  		, checked:false, display:"Doesn't understand women"},
+	{name:"hastingsSolvesCase" 				  , checked:false, display:"Solves the case"},
+	{name:"hastingsSmitten" 						, checked:false, display:"Is in love"},
+	{name:"hastingsTravel" 					  	, checked:false, display:"Travels abroad"},
+	{name:"hastingsHobby" 							, checked:false, display:"Takes up a hobby"},
+	{name:"hastingsGolf" 							  , checked:false, display:"Plays golf"},
+	{name:"hastingsCar"  							  , checked:false, display:"Is a car enthusiast"},
+	];
+
+	lemonTropes = [
+	{name:"msLemonOrderAndMethod" 			, checked:false, display:"Does detective work"},
+	{name:"msLemonsFilingSystem" 			  , checked:false, display:"Uses her filing system"},
+	{name:"msLemonSupernatural" 				, checked:false, display:"Is supernatural"},
+	];
+
+	otherTropes = [
 	{name:"frenchVsEnglishCuisine"			, checked:false, display:"Episode features French vs. English cuisine"},
 	{name:"diggingUpThePast" 					  , checked:false, display:"Setting is in an archaeological dig"},
 	{name:"artImitatesArt"							, checked:false, display:"Episode involves a murder-mystery play or book"},
 	{name:"hostIsMurdered" 						  , checked:false, display:"The host is murdered at or after their own event"},
 	{name:"bridgeGame" 								  , checked:false, display:"Characters play the card game Bridge"},
 	{name:"bonVoyage" 									, checked:false, display:"Crime scene is on a train, plane or boat"},
+	{name:"perpTriesToOutmartPoirot" 	  , checked:false, display:"A criminal intentionally involves Poirot in the plot"},
 	{name:"christmasSpecial"						, checked:false, display:"Christmas special"}
-];
+	];
 
   constructor(private controlContainer: ControlContainer) { }
 
