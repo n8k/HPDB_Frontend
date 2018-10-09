@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
-// import service goes here
+import { EpisodeService } from '../../services/episode.service';
 
 @Component({
 	selector: 'app-search',
@@ -10,11 +9,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
 
-	basicSearchGroup: FormGroup;
-	crimeSearchGroup: FormGroup;
-
 	constructor( 
-		@Inject(FormBuilder) fb: FormBuilder
+		@Inject(FormBuilder) fb: FormBuilder,
+		private episodeService: EpisodeService
 		) {
 		this.mainSearchGroup = fb.group({
 				'season':'',
@@ -65,13 +62,24 @@ export class SearchComponent implements OnInit {
 				'director':'None',
 				'writer':'None'
 			})
-
 }
 
 	ngOnInit() {
 	}
 
+	cleanPayload() {
+		let payload = {};
+		for (var key in this.mainSearchGroup.value) {
+			let iterator = this.mainSearchGroup.value[key]
+			if (iterator != false  && iterator != "None") {
+				payload[key] = iterator;
+			}
+		}
+		return payload;
+	}
+
 	onSubmit() {
+		this.episodeService.globalSearch(this.cleanPayload());
 	}
 
 	}

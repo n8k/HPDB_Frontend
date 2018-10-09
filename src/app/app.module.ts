@@ -18,6 +18,9 @@ import { provideRoutes 			} from '@angular/router';
 import { baseURL 									} from './shared/baseURL';
 import { RestangularConfigFactory } from './shared/restConfig';
 
+// Service
+import { EpisodeService 		} from './services/episode.service';
+
 // Restangular
 import { RestangularModule,
 				 Restangular 				} from 'ngx-restangular';
@@ -37,6 +40,7 @@ import { DirectorComponent  } from './components/search/director/director.compon
 import { WriterComponent 		} from './components/search/writer/writer.component';
 import { CrimeComponent 		} from './components/search/crime/crime.component';
 import { TropesComponent 		} from './components/search/tropes/tropes.component';
+import { ResultsComponent 	} from './components/results/results.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,7 @@ import { TropesComponent 		} from './components/search/tropes/tropes.component';
     WriterComponent,
     CrimeComponent,
     TropesComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { TropesComponent 		} from './components/search/tropes/tropes.component';
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [
+  EpisodeService,
   {provide: 'BaseURL', useValue: baseURL}
   ],
   bootstrap: [AppComponent]

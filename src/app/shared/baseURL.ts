@@ -1,1 +1,1 @@
-export const baseURL = 'http://localhost:3000/episode/';
+export const baseURL = 'http://localhost:3000/';

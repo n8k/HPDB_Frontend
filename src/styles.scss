@@ -30,3 +30,6 @@ $grey:				#707272;
 .brand-light 				{background-color: $light-grey; }
 .brand-grey 				{background-color: $grey; }
 
+.content-table      { display: table; border-collapse: separate;}
+.content-row        { display: table-row;}
+.cell               { display: table-cell;}
