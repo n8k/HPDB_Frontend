@@ -1,127 +1,3 @@
-<!-- <div class="section">
-
-<div class="column box brand-red">
-	<p class="is-size-4 totally-centered">Search Results</p>
-</div>
-
-
-<div class="column has-background-light">
-
-		<div class="columns "*ngFor="let s of searchResult">
-	<a>
-		<div style="padding:1vw" class="field has-addons">
-			<span
-			class="column is-one-fifth is-static is-size-5 totally-centered"
-			style="min-width:24vw">
-				Season {{s.season}} Episode {{s.episode}}
-			</span>
-			<span
-			class="column is-one-fifth is-static is-size-5 totally-centered"
-			style="min-width:24vw">
-				"{{s.title}}"
-			</span>
-			<span class="column totally-centered">
-				{{s.episodeSummary}}
-			</span>
-		</div>
-	</a>		
-	</div>
-</div>
-  
-
-</div> -->
-
-<!-- 
-Attempt 2
-
-<div class="section">
-
-<div class="column box brand-red">
-	<p class="is-size-4 totally-centered">Search Results</p>
-</div>
-
-<div class="section">
-<table class="table is-bordered is-striped">
-  <thead>
-    <tr>
-      <th>Season</th>
-      <th>Episode</th>
-      <th>Title</th>
-      <th>Episode Summary</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let s of searchResult">
-  	<tr>
-  		<td>{{s.season}}</td>
-  		<td>{{s.episode}}</td>
-  		<td>{{s.title}}</td>
-  		<td>{{s.episodeSummary}}</td>			
-  	</tr>	
-  </tbody>
-</table>
-</div>
-</div> -->
-
-<!-- 
-<div class="section">
-
-<div class="column box brand-red">
-	<p class="is-size-4 totally-centered">Search Results</p>
-</div>
-
-<div class="tile is-ancestor" *ngFor="let s of searchResult">
-	<div class="tile is-parent">
-  <div class="tile is-child is-2">
-  	Season {{s.season}}
-  </div>
-  <div class="tile is-child is-2">
-  	Episode {{s.episode}}
-  </div>
-  <div class="tile is-child is-3">
-  	{{s.title}}
-  </div>
-  <div class="tile is-child is-5">
-  	{{s.episodeSummary}}
-  </div>
-  </div>
-</div>
-
-</div>
- -->
-
-<!-- <div class="section">
-
-	<div class="column box brand-red">
-		<p class="is-size-4 totally-centered">Search Results</p>
-	</div>
-
-	<div *ngFor="let s of searchResult">
-	<div class="columns">
-
-	<div class="box columns">	
-		<div class="column totally-centered is-1">
-			<span> S-{{s.season}}</span>
-		</div>
-
-		<div class="column totally-centered is-1">
-			<span> E-{{s.episode}}</span>
-		</div>
-
-		<div class="column totally-centered is-3">
-			<span> {{s.title}}</span>
-		</div>
-
-		<div class="column totally-centered is-7">
-			<span> {{s.episodeSummary}}</span>
-		</div>
-	</div>
-	</div>
-		<br>
-
-
-</div>
- -->
-
  <div class="section has-background-light">
 
  	<div class="column box brand-red">
@@ -143,13 +19,16 @@ Attempt 2
  		</div>
 
  		<div class="column is-10 has-background-white box totally-centered cell">
- 			<span> {{s.title}}</span>
+ 			<span> {{s.title}}
+ 				<p class="icon"><fa-icon class="icon is-size-6" [icon]="['fas', 'info-circle']"></fa-icon></p>
+ 			</span>
  		</div>
  		</div>
 
  		<div class="column totally-centered content-row">
  			<span> {{s.episodeSummary}}</span>
  		</div>
+
  	</div>
  	</div>
  		<br>

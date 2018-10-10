@@ -8,20 +8,6 @@ import { SearchResult } from '../../shared/searchResult';
   styleUrls: ['./results.component.scss']
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export class ResultsComponent implements OnInit {
 
 	searchResult: SearchResult
