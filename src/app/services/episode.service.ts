@@ -66,6 +66,10 @@ export class EpisodeService {
   	return newPayload;
   }
 
+  getEpisodeById(episodeId:string): Observable<any> {
+  	return this.restangular.one('id', episodeId).get();
+  }
+
   globalSearch(payload) {
   	let searchObject = this.preparePayload(payload);
   	return this.restangular.all(searchObject).getList();
