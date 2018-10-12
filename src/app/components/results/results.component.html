@@ -18,8 +18,8 @@
  			<span> E{{s.episode}}</span>
  		</div>
 
- 		<div class="column is-10 has-background-white box totally-centered cell">
- 			<span> {{s.title}}
+ 		<div class="column is-10 has-background-white box totally-centered cell" [routerLink]="['/id/', s._id]">
+ 			<span class="is-size-6"> <strong>{{s.title}}</strong>
  				<p class="icon"><fa-icon class="icon is-size-6" [icon]="['fas', 'info-circle']"></fa-icon></p>
  			</span>
  		</div>
