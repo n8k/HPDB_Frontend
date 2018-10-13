@@ -52,7 +52,7 @@
 	      <article class="tile box is-child notification">
 	        <p class="title is-size-4">Main Characters</p>
 	      </article>
-	      <article class="tile box is-child notification">
+	      <article class="tile is-8 box is-child notification">
 	      	<p class="subtitle">Hercule Poirot</p>
 	      	<p *ngIf="mainCharacters.hastings" class="subtitle">Captain Arthur Hastings</p>
 	      	<p *ngIf="mainCharacters.lemon" class="subtitle">Ms. Felicty Lemon</p>
@@ -60,10 +60,49 @@
 	      	<p *ngIf="mainCharacters.oliver" class="subtitle">Ms. Ariadne Oliver</p>
 	      	<p *ngIf="mainCharacters.george" class="subtitle">George the Valet</p>
 
-	      </article>
-
-
+	      </article>	
 	    </div>
+
+	    <div class="tile is-parent is-horizontal">
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Tropes</p>
+	      </article>
+	      <article class="tile is-8 box is-child notification">
+	      	<p *ngIf="tropes.poirotTriesToPreventMurder" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'ban']"></fa-icon>&nbsp;Poirot tries to prevent murder</p>
+	      	<p *ngIf="tropes.poirotTriesToPreventCrime" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'ban']"></fa-icon>&nbsp;Poirot tries to prevent other crime</p>
+	      	<p *ngIf="tropes.poirotLenientJudgeAndJury" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'hand-holding-heart']"></fa-icon>&nbsp;Poirot does not punish a guilty party</p>
+	      	<p *ngIf="tropes.poirotCompulsiveSymmetry" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'star-half-alt']"></fa-icon>&nbsp;Poirot is obsessed with symmetry</p>
+	      	<p *ngIf="tropes.poirotIsReallyBelgian" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'exclamation-triangle']"></fa-icon>&nbsp;Poirot is Belgian, not French</p>
+	      	<p *ngIf="tropes.poirotSolvesColdCase" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'folder-open']"></fa-icon>&nbsp;Poirot solves a cold case</p>
+	      	<p *ngIf="tropes.poirotCommitsCrime" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'lock-open']"></fa-icon>&nbsp;Poirot commits a crime</p>
+	      	<p *ngIf="tropes.poirotMatchmaker" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'heart']"></fa-icon>&nbsp;Poirot plays matchmaker for a young couple</p>
+	      	<p *ngIf="tropes.poirotRetirement" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'laugh-squint']"></fa-icon>&nbsp;Poirot enjoys retirement </p>
+	      	<p *ngIf="tropes.poirotAvuncular" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'hands-helping']"></fa-icon>&nbsp;Poirot acts as avuncular to a young lady</p>
+	      	<p *ngIf="tropes.poirotOnHoliday" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'suitcase']"></fa-icon>&nbsp;Poirot is on holiday</p>
+	      	<p *ngIf="tropes.poirotSmitten" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'heart']"></fa-icon>&nbsp;Poirot is in love</p>
+	      	<p *ngIf="tropes.poirotDentist" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'grimace']"></fa-icon>&nbsp;Poirot visits the dentist</p>
+	      	<p *ngIf="tropes.hastingsLadyPuzzlement" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'question']"></fa-icon>&nbsp;Hastings doesn't understand women</p>
+	      	<p *ngIf="tropes.hastingsSolvesCase" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'search']"></fa-icon>&nbsp;Hastings solves the case</p>
+	      	<p *ngIf="tropes.hastingsSmitten" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'heart']"></fa-icon>&nbsp;Hastings is in love</p>
+	      	<p *ngIf="tropes.hastingsTravel" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'globe-americas']"></fa-icon>&nbsp;Hastings travels abroad</p>
+	      	<p *ngIf="tropes.hastingsHobby" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'camera-retro']"></fa-icon>&nbsp;Hastings takes up a hobby</p>
+	      	<p *ngIf="tropes.hastingsGolf" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'golf-ball']"></fa-icon>&nbsp;Hastings enjoys golf</p>
+	      	<p *ngIf="tropes.hastingsCar" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'car']"></fa-icon>&nbsp;Hastings is a car enthusiast</p>
+	      	<p *ngIf="tropes.msLemonOrderAndMethod" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'search']"></fa-icon>&nbsp;Ms. Lemon does detective work</p>
+	      	<p *ngIf="tropes.msLemonsFilingSystem" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'folder-open']"></fa-icon>&nbsp;Ms. Lemon uses her filing system</p>
+	      	<p *ngIf="tropes.msLemonSupernatural" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'magic']"></fa-icon>&nbsp;Ms. Lemon is supernatural</p>
+	      	<p *ngIf="tropes.perpTriesToOutmartPoirot" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'chess']"></fa-icon>&nbsp;Perpetrator intentionally involves Poirot as part of the plot</p>
+	      	<p *ngIf="tropes.frenchVsEnglishCuisine" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'utensils']"></fa-icon>&nbsp;Episode features French vs. English cuisine</p>
+	      	<p *ngIf="tropes.diggingUpThePast" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'globe-africa']"></fa-icon>&nbsp;Setting is in an archaeological dig in the Middle East</p>
+	      	<p *ngIf="tropes.christmasSpecial" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'star']"></fa-icon>&nbsp;Christmas special</p>
+	      	<p *ngIf="tropes.artImitatesArt" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fa', 'theater-masks']"></fa-icon>&nbsp;Episode involves a murder-mystery play or book</p>
+	      	<p *ngIf="tropes.hostIsMurdered" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'skull']"></fa-icon>&nbsp;The host is murdered at or after their own event</p>
+	      	<p *ngIf="tropes.bridgeGame" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['far', 'money-bill-alt']"></fa-icon>&nbsp;Characters play the card game Bridge</p>
+	      	<p *ngIf="tropes.bonVoyage" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'plane-departure']"></fa-icon>&nbsp;Crime scene is on a train, plane or boat</p>
+
+	      </article>	
+	    </div>
+
 	  </div>
 	  
 	</div>
