@@ -30,17 +30,18 @@ import { FormsModule 				} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 
 // Components
-import { AppComponent 			} from './app.component';
-import { HeaderComponent 		} from './components/header/header.component';
-import { FooterComponent 		} from './components/footer/footer.component';
-import { HowtouseComponent 	} from './components/howtouse/howtouse.component';
-import { SearchComponent    } from './components/search/search.component';
-import { BasicComponent 		} from './components/search/basic/basic.component';
-import { DirectorComponent  } from './components/search/director/director.component';
-import { WriterComponent 		} from './components/search/writer/writer.component';
-import { CrimeComponent 		} from './components/search/crime/crime.component';
-import { TropesComponent 		} from './components/search/tropes/tropes.component';
-import { ResultsComponent 	} from './components/results/results.component';
+import { AppComponent 					} from './app.component';
+import { HeaderComponent 				} from './components/header/header.component';
+import { FooterComponent 				} from './components/footer/footer.component';
+import { HowtouseComponent 			} from './components/howtouse/howtouse.component';
+import { SearchComponent    		} from './components/search/search.component';
+import { BasicComponent 				} from './components/search/basic/basic.component';
+import { DirectorComponent  		} from './components/search/director/director.component';
+import { WriterComponent 				} from './components/search/writer/writer.component';
+import { CrimeComponent 				} from './components/search/crime/crime.component';
+import { TropesComponent 				} from './components/search/tropes/tropes.component';
+import { ResultsComponent 			} from './components/results/results.component';
+import { EpisodeDetailComponent } from './components/episode-detail/episode-detail.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ResultsComponent 	} from './components/results/results.component';
     CrimeComponent,
     TropesComponent,
     ResultsComponent,
+    EpisodeDetailComponent,
   ],
   imports: [
     BrowserModule,

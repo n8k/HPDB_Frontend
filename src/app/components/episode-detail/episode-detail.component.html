@@ -1,0 +1,170 @@
+<div class="section has-background-light">
+
+	<div class="column box brand-red">
+		<p class="is-size-4 totally-centered">Episode Details</p>
+	</div>
+
+	<div class="tile is-ancestor">
+	  <div class="tile is-vertical is-12">
+	    <div class="tile">
+	      <div class="tile is-parent is-horizontal">
+	        <article class="tile box is-child notification">
+	          <p class="title is-size-4">Season {{episodeDetail.season}}</p>
+	        </article>
+	        <article class="tile box is-child notification">
+	          <p class="title is-size-4">Episode {{episodeDetail.episode}}</p>
+	        </article>
+	        <article class="tile box is-7 is-child notification">
+	          <p class="title is-size-4">Title</p>
+	        <p class="subtitle">{{episodeDetail.title | titlecase}}</p>
+
+	        </article>
+	      </div>
+	    </div>
+
+	    <div class="tile is-parent is-horizontal">
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Mood</p>
+	        <p class="subtitle">{{episodeDetail.mood | titlecase}}</p>
+	      </article>
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Screenplay / Writing</p>
+	        <p class="subtitle">{{episodeDetail.writer}}</p>
+	      </article>
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Director</p>
+	        <p class="subtitle">{{episodeDetail.director}}</p>
+	      </article>
+	    </div>
+
+
+	    <div class="tile is-parent">
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Summary</p>
+	        <p class="subtitle">{{episodeDetail.episodeSummary}}</p>
+	        <div class="content">
+	          <!-- Content -->
+	        </div>
+	      </article>
+	    </div>
+
+	    <div class="tile is-parent is-horizontal">
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Main Characters</p>
+	      </article>
+	      <article class="tile box is-child notification">
+	      	<p class="subtitle">Hercule Poirot</p>
+	      	<p *ngIf="mainCharacters.hastings" class="subtitle">Captain Arthur Hastings</p>
+	      	<p *ngIf="mainCharacters.lemon" class="subtitle">Ms. Felicty Lemon</p>
+	      	<p *ngIf="mainCharacters.japp" class="subtitle">Inspector James Japp</p>
+	      	<p *ngIf="mainCharacters.oliver" class="subtitle">Ms. Ariadne Oliver</p>
+	      	<p *ngIf="mainCharacters.george" class="subtitle">George the Valet</p>
+
+	      </article>
+
+
+	    </div>
+	  </div>
+	  
+	</div>
+
+
+</div>
+
+
+<!-- 	<div class="column totally-centered centered-line content-table">	
+		<div class="column is-2-mobile box totally-centered cell"
+		style="min-width: 24vw;">
+			<strong>Season</strong> &nbsp; {{episodeDetail.season}}
+		</div>
+		<div class="column is-2-mobile box totally-centered cell"
+		style="min-width: 24vw;">
+			<strong>Episode</strong> &nbsp; {{episodeDetail.episode}}
+		</div>
+
+	</div>
+
+	<div class="column totally-centered centered-line content-table">	
+		<div class="column is-2-mobile box totally-centered cell"
+		style="min-width: 48vw;">
+		<strong>Title</strong> &nbsp; {{episodeDetail.title}}
+	</div>
+	</div>
+
+	<div class="column totally-centered centered-line content-table">	
+		<div class="column is-2-mobile box totally-centered cell"
+		style="min-width: 48vw;">
+		<strong>Summary</strong> &nbsp; {{episodeDetail.episodeSummary}}
+	</div>
+	</div>
+
+</div>
+ -->
+
+<!-- 	<div class="column has-background-light">
+		<div class="columns totally-centered">
+			<div class="field has-addons">
+
+			<span
+				class="column button is-static totally-centered is-size-5"
+				>Season
+			</span>
+
+			<span
+				class="column button is-static totally-centered is-size-5"
+				>{{episodeDetail.season}}
+			</span>
+
+			<span
+				class="column button is-static totally-centered is-size-5"
+				>Episode
+			</span>
+
+			<span
+				class="column button is-static totally-centered is-size-5"
+				>{{episodeDetail.episode}}
+			</span>
+
+	</div>
+</div>
+
+<div class="columns totally-centered">
+	<div class="field has-addons">
+
+<span
+	class="column button is-static totally-centered is-size-5"
+	>Episode Title
+</span>
+
+<span
+	class="column button is-static totally-centered is-size-5"
+	>{{episodeDetail.title}}
+</span>
+</div>
+</div>
+ -->
+<!-- style="min-width:36vw" -->
+
+
+
+
+<!-- <div class="columns totally-centered">
+	<div class="column">
+			<div style="padding:1vw" class="field has-addons">
+				<label
+				class="button is-static is-size-5"
+				style="min-width:36vw"
+				>Season
+				</label>
+			</div>
+	
+			<div style="padding:1vw" class="field has-addons">
+				<label
+				class="button is-static is-size-5"
+				style="min-width:36vw"
+				>{{episodeDetail.season}}
+				</label>
+			</div>
+	</div></div>
+ -->
+	<!-- </div>	 -->
