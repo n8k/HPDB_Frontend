@@ -1,7 +1,7 @@
 <div class="section has-background-light">
 
 	<div class="column box brand-red">
-		<p class="is-size-4 totally-centered">Episode Details</p>
+		<p class="is-size-2 totally-centered">Episode Details</p>
 	</div>
 
 	<div class="tile is-ancestor">
@@ -16,7 +16,7 @@
 	        </article>
 	        <article class="tile box is-7 is-child notification">
 	          <p class="title is-size-4">Title</p>
-	        <p class="subtitle">{{episodeDetail.title | titlecase}}</p>
+	        <p class="subtitle">{{episodeDetail.title}}</p>
 
 	        </article>
 	      </div>
@@ -46,21 +46,6 @@
 	          <!-- Content -->
 	        </div>
 	      </article>
-	    </div>
-
-	    <div class="tile is-parent is-horizontal">
-	      <article class="tile box is-child notification">
-	        <p class="title is-size-4">Main Characters</p>
-	      </article>
-	      <article class="tile is-8 box is-child notification">
-	      	<p class="subtitle">Hercule Poirot</p>
-	      	<p *ngIf="mainCharacters.hastings" class="subtitle">Captain Arthur Hastings</p>
-	      	<p *ngIf="mainCharacters.lemon" class="subtitle">Ms. Felicty Lemon</p>
-	      	<p *ngIf="mainCharacters.japp" class="subtitle">Inspector James Japp</p>
-	      	<p *ngIf="mainCharacters.oliver" class="subtitle">Ms. Ariadne Oliver</p>
-	      	<p *ngIf="mainCharacters.george" class="subtitle">George the Valet</p>
-
-	      </article>	
 	    </div>
 
 	    <div class="tile is-parent is-horizontal">
@@ -101,6 +86,66 @@
 	      	<p *ngIf="tropes.bonVoyage" class="subtitle"><fa-icon class="icon is-size-5" [icon]="['fas', 'plane-departure']"></fa-icon>&nbsp;Crime scene is on a train, plane or boat</p>
 
 	      </article>	
+	    </div>
+
+	    <div class="tile is-parent is-horizontal">
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Main Characters</p>
+	      </article>
+	      <article class="tile is-8 box is-child notification">
+	      	<p class="subtitle">Hercule Poirot</p>
+	      	<p *ngIf="mainCharacters.hastings" class="subtitle">Captain Arthur Hastings</p>
+	      	<p *ngIf="mainCharacters.lemon" class="subtitle">Ms. Felicty Lemon</p>
+	      	<p *ngIf="mainCharacters.japp" class="subtitle">Inspector James Japp</p>
+	      	<p *ngIf="mainCharacters.oliver" class="subtitle">Ms. Ariadne Oliver</p>
+	      	<p *ngIf="mainCharacters.george" class="subtitle">George the Valet</p>
+
+	      </article>	
+	    </div>
+
+	    <div class="tile is-parent is-horizontal">
+	      <article class="tile box is-child notification">
+	        <p class="title is-size-4">Supporting Characters</p>
+	      </article>
+	      <article class="tile is-8 box is-child notification">
+	      	<p *ngFor="let char of episodeDetail.supportingCharacters" class="subtitle">{{char}}</p>
+	      </article>	
+	    </div>
+
+	    <div class="tile is-parent is-horizontal">
+	      <article class="tile box is-child notification brand-red">
+	        <p class="title is-size-3 totally-centered">Crimes</p>
+	      </article>	
+	    </div>
+
+	    <div class="tile" *ngFor="let c of crimesArray">
+	    	<div class="tile is-vertical is-12">
+	    	  <div class="tile">
+	    	  	<div class="tile is-4 is-parent">
+	    	  	  <article class="tile box is-child notification brand-light-red">
+	    	  	    <p class="title">{{c.criminalAct}}</p>
+	    	  	  </article>
+	    	  	</div>
+	    	    <div class="tile is-3 is-parent is-vertical">
+	    	      <article class="tile box is-child notification">
+	    	        <p class="title">Perpetrator</p>
+	    	        <p class="subtitle">{{c.perpetrator}}</p>
+	    	      </article>
+	    	      <article class="tile box is-child notification">
+	    	        <p class="title">Victim</p>
+	    	        <p class="subtitle">{{c.victim}}</p>
+	    	      </article>
+	    	    </div>
+	    	    <div class="tile is-parent">
+	    	      <article class="tile box is-child notification">
+	    	        <p class="subtitle"><strong>Means:&nbsp;</strong> {{c.means}}</p>
+	    	        <br>
+	    	        <p class="subtitle"><strong>Motive:&nbsp;</strong> {{c.motive}}</p>
+	    	        <br>
+	    	        <p class="subtitle"><strong>Opportunity:&nbsp;</strong> {{c.opportunity}}</p>
+	    	      </article>
+	    	    </div>
+	    	  </div>
 	    </div>
 
 	  </div>
