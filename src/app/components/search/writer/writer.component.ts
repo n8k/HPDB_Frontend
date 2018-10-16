@@ -10,28 +10,28 @@ export class WriterComponent implements OnInit {
 	@Input() writer: FormGroup;
 
 	writers = [
-	{value:'None'},
-	{value:'Andrew Marshall'},
-	{value:'Anthony Horowitz'},
-	{value:'Bill Craig'},
-	{value:'Clive Exton'},
-	{value:'David Pirie'},
-	{value:'David Reid'},
-	{value:'David Renwick'}
-	{value:'Douglas Watkinson'},
-	{value:'Guy Andrews'},
-	{value:'Kevin Elyot'},
-	{value:'Mark Gatiss'},
-	{value:'Michael Baker'},
-	{value:'Nick Dear'},
-	{value:'Peter Flannery'},
-	{value:'Philomena McDonagh'},
-	{value:'Rod Beacham'},
-	{value:'Russell Murray'},
-	{value:'Stephen Wakelam'},
-	{value:'Stewart Harcourt'},
-	{value:'TR Bowen'},
-	{value:'William Humble'}
+	{display:'None', value:''},
+	{display:'Andrew Marshall', value:'Andrew Marshall'},
+	{display:'Anthony Horowitz', value:'Anthony Horowitz'},
+	{display:'Bill Craig', value:'Bill Craig'},
+	{display:'Clive Exton', value:'Clive Exton'},
+	{display:'David Pirie', value:'David Pirie'},
+	{display:'David Reid', value:'David Reid'},
+	{display:'David Renwick', value:'David Renwick'}
+	{display:'Douglas Watkinson', value:'Douglas Watkinson'},
+	{display:'Guy Andrews', value:'Guy Andrews'},
+	{display:'Kevin Elyot', value:'Kevin Elyot'},
+	{display:'Mark Gatiss', value:'Mark Gatiss'},
+	{display:'Michael Baker', value:'Michael Baker'},
+	{display:'Nick Dear', value:'Nick Dear'},
+	{display:'Peter Flannery', value:'Peter Flannery'},
+	{display:'Philomena McDonagh', value:'Philomena McDonagh'},
+	{display:'Rod Beacham', value:'Rod Beacham'},
+	{display:'Russell Murray', value:'Russell Murray'},
+	{display:'Stephen Wakelam', value:'Stephen Wakelam'},
+	{display:'Stewart Harcourt', value:'Stewart Harcourt'},
+	{display:'TR Bowen', value:'TR Bowen'},
+	{display:'William Humble', value:'William Humble'}
 	];
 
 	constructor(private controlContainer: ControlContainer) { }
