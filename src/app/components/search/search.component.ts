@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EpisodeService } from '../../services/episode.service';
+import { SearchResult } from '../../shared/searchResult';
 
 @Component({
 	selector: 'app-search',
@@ -9,10 +10,52 @@ import { EpisodeService } from '../../services/episode.service';
 })
 export class SearchComponent implements OnInit {
 
+	searchResult: SearchResult
+	errMess: string;
+	mainSearchGroup: FormGroup
+	mainCharacterValues: [];
+	tropeValues: [];
+
 	constructor( 
 		@Inject(FormBuilder) fb: FormBuilder,
-		private episodeService: EpisodeService
+  	@Inject('BaseURL') private BaseURL,
+		private episodeService: EpisodeService,
 		) {
+
+		this.mainCharacterValues = ['hastings','lemon','oliver','japp'];
+		this.tropeValues = [
+		'poirotTriesToPreventMurder',
+		'poirotTriesToPreventCrime',
+		'poirotLenientJudgeAndJury',
+		'poirotCompulsiveSymmetry',
+		'poirotIsReallyBelgian',
+		'poirotSolvesColdCase',
+		'poirotCommitsCrime',
+		'poirotMatchmaker',
+		'poirotRetirement',
+		'poirotAvuncular',
+		'poirotOnHoliday',
+		'poirotSmitten',
+		'poirotDentist',
+		'hastingsLadyPuzzlement',
+		'hastingsSolvesCase',
+		'hastingsSmitten',
+		'hastingsTravel',
+		'hastingsHobby',
+		'hastingsGolf',
+		'hastingsCar',
+		'msLemonOrderAndMethod',
+		'msLemonsFilingSystem',
+		'msLemonSupernatural',
+		'perpTriesToOutmartPoirot',
+		'frenchVsEnglishCuisine',
+		'diggingUpThePast',
+		'christmasSpecial',
+		'artImitatesArt',
+		'hostIsMurdered',
+		'bridgeGame',
+		'bonVoyage'];
+
 		this.mainSearchGroup = fb.group({
 				'season':'',
 				'episode':'',
@@ -27,7 +70,9 @@ export class SearchComponent implements OnInit {
 				'motive':'',
 				'opportunity':'',
 				'perpetrator':'',
-				'victim':''
+				'victim':'',
+				'director':'',
+				'writer':'',
 				'poirotTriesToPreventMurder': false,
 				'poirotTriesToPreventCrime':  false,
 				'poirotLenientJudgeAndJury': 	false,
@@ -58,29 +103,43 @@ export class SearchComponent implements OnInit {
 				'artImitatesArt':							false,
 				'hostIsMurdered': 						false,
 				'bridgeGame': 								false,
-				'bonVoyage': 									false,
-				'director':'None',
-				'writer':'None'
+				'bonVoyage': 									false
 			})
 }
 
 	ngOnInit() {
 	}
 
-	cleanPayload() {
-		let payload = {};
-		for (var key in this.mainSearchGroup.value) {
-			let iterator = this.mainSearchGroup.value[key]
-			if (iterator != false  && iterator != "None") {
-				payload[key] = iterator;
+	fixBooleans(obj, valuesArray, key) {
+		if (obj[valuesArray]  == undefined) {
+			obj[valuesArray] = key;
+		}else{
+			obj[valuesArray] = obj[valuesArray] + "," + key;
+		}
+	}
+
+	cleanPayload(obj) {
+		console.log(obj);
+		let newobj = {};
+		for (var key in obj) {
+			if (obj.hasOwnProperty(key) && obj[key] !=false){
+				if (this.mainCharacterValues.includes(key)) {
+					this.fixBooleans(newobj, "mainCharacters", key)
+			} else if (this.tropeValues.includes(key)) {
+					this.fixBooleans(newobj, "tropes", key)
+			} else {
+				newobj[key] = obj[key];}
 			}
 		}
-		return payload;
+		return newobj;
 	}
 
 	onSubmit() {
-		this.episodeService.globalSearch(this.cleanPayload());
+		var keys = Object.keys(this.mainSearchGroup.value);
+		var cleaned = this.cleanPayload(this.mainSearchGroup.value);
+		this.episodeService.globalSearch(cleaned)
+		.subscribe(
+			serviceResponse => this.searchResult = serviceResponse,
+			errmess => this.errMess = <any>errmess);
 	}
-
-	}
-
+}
