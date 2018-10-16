@@ -111,6 +111,10 @@ export class SearchComponent implements OnInit {
 	}
 
 	fixBooleans(obj, valuesArray, key) {
+		// This is a helper function that either:
+		// creates the trope/mainCharacter object if it doesn't exist, or
+		// adds the trope/mainCharacter to the existing if there are multiple.
+
 		if (obj[valuesArray]  == undefined) {
 			obj[valuesArray] = key;
 		}else{
@@ -119,7 +123,12 @@ export class SearchComponent implements OnInit {
 	}
 
 	cleanPayload(obj) {
-		console.log(obj);
+		// This takes the FormGroup data and:
+		// 0. throws out any empty form data where key:false or empty, or
+		// 1. adds the key to the payload where key:true, and
+		// 2. prefixes mainCharacter key for database if applicable , or
+		// 3. prefixes trope key for database if applicable.
+
 		let newobj = {};
 		for (var key in obj) {
 			if (obj.hasOwnProperty(key) && obj[key] !=false){

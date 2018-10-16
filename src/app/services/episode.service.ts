@@ -17,7 +17,6 @@ export class EpisodeService {
   }
 
   globalSearch(payload): Observable<SearchResult[]> {
-  	console.log(payload);
   	return this.restangular.all("episode").customGET("global", payload);
   }
 
