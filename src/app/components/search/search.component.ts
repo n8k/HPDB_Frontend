@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
 	mainSearchGroup: FormGroup
 	mainCharacterValues: [];
 	tropeValues: [];
+	emptyResult: boolean;
 
 	constructor( 
 		@Inject(FormBuilder) fb: FormBuilder,
@@ -108,6 +109,8 @@ export class SearchComponent implements OnInit {
 }
 
 	ngOnInit() {
+		this.searchResult = false;
+		this.emptyResult = false;
 	}
 
 	fixBooleans(obj, valuesArray, key) {
@@ -144,11 +147,76 @@ export class SearchComponent implements OnInit {
 	}
 
 	onSubmit() {
-		var keys = Object.keys(this.mainSearchGroup.value);
+
 		var cleaned = this.cleanPayload(this.mainSearchGroup.value);
 		this.episodeService.globalSearch(cleaned)
 		.subscribe(
-			serviceResponse => this.searchResult = serviceResponse,
-			errmess => this.errMess = <any>errmess);
+			serviceResponse => {
+				console.log(serviceResponse);
+				this.searchResult = serviceResponse;
+				console.log(this.searchResult);
+				if (serviceResponse[0] == undefined)
+					{this.emptyResult = true;}
+			},
+			errmess => this.errMess = <any>errmess,
+			);
+		console.log(this.emptyResult);
+
 	}
+
+	resetForm() {
+		this.episodeService = this.episodeService;
+		this.searchResult = false;
+		this.emptyResult = false;
+		this.mainSearchGroup.reset({
+			'season':'',
+			'episode':'',
+			'title':'',
+			'mood':'',
+			'hastings':false,
+			'lemon':false,
+			'oliver':false,
+			'japp':false,
+			'criminalAct':'',
+			'means':'',
+			'motive':'',
+			'opportunity':'',
+			'perpetrator':'',
+			'victim':'',
+			'director':'',
+			'writer':'',
+			'poirotTriesToPreventMurder': false,
+			'poirotTriesToPreventCrime':  false,
+			'poirotLenientJudgeAndJury': 	false,
+			'poirotCompulsiveSymmetry': 	false,
+			'poirotIsReallyBelgian': 			false,
+			'poirotSolvesColdCase': 			false,
+			'poirotCommitsCrime':					false,
+			'poirotMatchmaker': 					false,
+			'poirotRetirement': 					false,
+			'poirotAvuncular': 						false,
+			'poirotOnHoliday': 						false,
+			'poirotSmitten':  						false,
+			'poirotDentist': 							false,
+			'hastingsLadyPuzzlement':  		false,
+			'hastingsSolvesCase': 				false,
+			'hastingsSmitten': 						false,
+			'hastingsTravel': 						false,
+			'hastingsHobby': 							false,
+			'hastingsGolf': 							false,
+			'hastingsCar':  							false,
+			'msLemonOrderAndMethod': 			false,
+			'msLemonsFilingSystem': 			false,
+			'msLemonSupernatural': 				false,
+			'perpTriesToOutmartPoirot': 	false,
+			'frenchVsEnglishCuisine':			false,
+			'diggingUpThePast': 					false,
+			'christmasSpecial':						false,
+			'artImitatesArt':							false,
+			'hostIsMurdered': 						false,
+			'bridgeGame': 								false,
+			'bonVoyage': 									false
+		})
+	}
+
 }

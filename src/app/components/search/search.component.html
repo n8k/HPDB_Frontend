@@ -1,27 +1,31 @@
 <div class="container is-widescreen" *ngIf="!searchResult">
 	<div class="notification">
-
 		<div class="column centered-line">
-    form value: {{ mainSearchGroup.value | json }}
-		</div>
+	</div>
  
-		<form novalidate (ngSubmit)="onSubmit()">
+	<form novalidate (ngSubmit)="onSubmit()">
 
-		<basic-search-component [formGroup]="mainSearchGroup"></basic-search-component>
+	<basic-search-component [formGroup]="mainSearchGroup"></basic-search-component>
 
-		<crime-search-component [formGroup]="mainSearchGroup"></crime-search-component>
+	<crime-search-component [formGroup]="mainSearchGroup"></crime-search-component>
 
-		<tropes-search-component [formGroup]="mainSearchGroup"></tropes-search-component>
+	<tropes-search-component [formGroup]="mainSearchGroup"></tropes-search-component>
 
-		<director-search-component [formGroup]="mainSearchGroup"></director-search-component>
+	<director-search-component [formGroup]="mainSearchGroup"></director-search-component>
 
-		<writer-search-component [formGroup]="mainSearchGroup"></writer-search-component>
+	<writer-search-component [formGroup]="mainSearchGroup"></writer-search-component>
 
-		<button type="submit">Search</button>
+	<br>
 
-		</form>
+	<div class="columns">
+		<div class="column is-1"></div>
+		<button class="column is-4 is-12-mobile totally-centered button is-large is-rounded brand-light-red" type="submit">Search</button>
+		<div class="column is-2"></div>
+		<button (click)="resetForm()" class="column is-4 is-12-mobile totally-centered button is-large is-rounded brand-light">Reset</button>
+	</div>
 
-
+	<br>
+	</form>
 	</div>
 </div>
 
@@ -33,24 +37,24 @@
 		</div>
 
 		<div *ngFor="let s of searchResult">
-		<div class="columns">
+			<div class="columns">
 
-		<div class="box columns" style="margin: 0 2vw;">	
-			<div class="column totally-centered centered-line content-table">
+			<div class="box columns" style="margin: 0 2vw;">	
+				<div class="column totally-centered centered-line content-table">
 
-			<div class="column is-1-mobile brand-light-red box totally-centered cell">
-				<span> S{{s.season}}</span>
-			</div>
+				<div class="column is-1-mobile brand-light-red box totally-centered cell">
+					<span> S{{s.season}}</span>
+				</div>
 
-			<div class="column is-1-mobile brand-light-red box totally-centered cell">
-				<span> E{{s.episode}}</span>
-			</div>
+				<div class="column is-1-mobile brand-light-red box totally-centered cell">
+					<span> E{{s.episode}}</span>
+				</div>
 
-			<div class="column is-10 has-background-white box totally-centered cell" [routerLink]="['/id/', s._id]">
-				<span class="is-size-6"> <strong>{{s.title}}</strong>
-					<p class="icon"><fa-icon class="icon is-size-6" [icon]="['fas', 'info-circle']"></fa-icon></p>
-				</span>
-			</div>
+				<div class="column is-10 has-background-white box totally-centered cell" [routerLink]="['/id/', s._id]">
+					<span class="is-size-6"> <strong>{{s.title}}</strong>
+						<p class="icon"><fa-icon class="icon is-size-6" [icon]="['fas', 'info-circle']"></fa-icon></p>
+					</span>
+				</div>
 			</div>
 
 			<div class="column totally-centered content-row">
@@ -59,9 +63,19 @@
 
 		</div>
 		</div>
+		<br>
+		</div>
+
+		<div class="column has-background-light" *ngIf="emptyResult" class="is-size-4 centered-line">Your search returned no results.
 			<br>
+			<br>
+		</div>
 
+		<div class="columns">
+			<div class="column is-4"></div>
+			<button class="button column is-4 is-12-mobile totally-centered is-large is-rounded brand-light is-size-4" (click)="resetForm()">Search again?</button>
+		<br>
+		</div>
 
-	</div>
 </div>
-
+</div>
