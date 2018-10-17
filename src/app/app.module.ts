@@ -42,6 +42,7 @@ import { CrimeComponent 				} from './components/search/crime/crime.component';
 import { TropesComponent 				} from './components/search/tropes/tropes.component';
 import { ResultsComponent 			} from './components/results/results.component';
 import { EpisodeDetailComponent } from './components/episode-detail/episode-detail.component';
+import { AboutComponent 				} from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { EpisodeDetailComponent } from './components/episode-detail/episode-deta
     TropesComponent,
     ResultsComponent,
     EpisodeDetailComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
