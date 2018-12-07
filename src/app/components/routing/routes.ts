@@ -8,7 +8,7 @@ import { AboutComponent 				} from '../about/about.component';
 
 export const routes: Routes = [
   { path: 'about',  component: AboutComponent },
-  { path: 'home',      component: ResultsComponent },
+  { path: 'home',      component: SearchComponent },
   { path: 'search',    component: SearchComponent },
   { path: 'id/:episodeId',      component: EpisodeDetailComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
