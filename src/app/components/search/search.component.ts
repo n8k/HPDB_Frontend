@@ -152,16 +152,14 @@ export class SearchComponent implements OnInit {
 		this.episodeService.globalSearch(cleaned)
 		.subscribe(
 			serviceResponse => {
-				console.log(serviceResponse);
-				this.searchResult = serviceResponse;
-				console.log(this.searchResult);
+				this.searchResult = serviceResponse.sort((a,b) => {
+					return a["season"] - b["season"] || a["episode"] - b["episode"]
+				});
 				if (serviceResponse[0] == undefined)
 					{this.emptyResult = true;}
 			},
 			errmess => this.errMess = <any>errmess,
 			);
-		console.log(this.emptyResult);
-
 	}
 
 	resetForm() {
