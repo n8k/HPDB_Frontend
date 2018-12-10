@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-$red: 				#E4605E;
-$light-red:		#E47087;
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+$red: 				#FD635D;
 $light-grey:	#CBCDCD;
 $grey:				#707272;
 
@@ -26,7 +27,6 @@ $grey:				#707272;
 
 .mat-icon 					{text-indent: -0.7em; }
 .brand-red 					{background-color: $red; }
-.brand-light-red 		{background-color: $light-red; }
 .brand-light 				{background-color: $light-grey; }
 .brand-grey 				{background-color: $grey; }
 
