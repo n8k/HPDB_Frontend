@@ -20,7 +20,7 @@
 	<div class="columns">
 		<div class="column is-1"></div>
 		<button class="column is-4 is-12-mobile totally-centered button is-large is-rounded 	
-brand-red" type="submit">Search</button>
+brand-red" type="submit" [disabled]="!mainSearchGroup.valid" >Search</button>
 		<div class="column is-2"></div>
 		<button (click)="resetForm()" class="column is-4 is-12-mobile totally-centered button is-large is-rounded brand-light">Reset</button>
 	</div>
