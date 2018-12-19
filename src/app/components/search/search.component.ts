@@ -149,10 +149,18 @@ export class SearchComponent implements OnInit {
 	onSubmit() {
 
 		var cleaned = this.cleanPayload(this.mainSearchGroup.value);
+
+		if (Object.keys(cleaned).length === 0) {
+			// If no search params have been entered, return all episodes.
+			// Every title has a space in it, so this gets all episodes.
+			cleaned = {title: " "}
+		}
+
 		this.episodeService.globalSearch(cleaned)
 		.subscribe(
 			serviceResponse => {
 				this.searchResult = serviceResponse.sort((a,b) => {
+					// This numerically sorts season, and if season is a tie, then by episode
 					return a["season"] - b["season"] || a["episode"] - b["episode"]
 				});
 				if (serviceResponse[0] == undefined)
