@@ -41,12 +41,12 @@ export class Tropes {
 }
 
 export class CrimesArray [{
-	perpetrator:  string;
-	victim: 			string;
-	criminalAct:	string;
-	means: 				string;
-	motive:				string;
-	opportunity: 	string;
+	perpetrator:  string,
+	victim: 			string,
+	criminalAct:	string,
+	means: 				string,
+	motive:				string,
+	opportunity: 	string
 }];
 
 export class EpisodeDetail {

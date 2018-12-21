@@ -17,7 +17,7 @@ export class WriterComponent implements OnInit {
 	{display:'Clive Exton', value:'Clive Exton'},
 	{display:'David Pirie', value:'David Pirie'},
 	{display:'David Reid', value:'David Reid'},
-	{display:'David Renwick', value:'David Renwick'}
+	{display:'David Renwick', value:'David Renwick'},
 	{display:'Douglas Watkinson', value:'Douglas Watkinson'},
 	{display:'Guy Andrews', value:'Guy Andrews'},
 	{display:'Kevin Elyot', value:'Kevin Elyot'},

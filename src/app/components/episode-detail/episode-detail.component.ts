@@ -33,23 +33,13 @@ export class EpisodeDetailComponent implements OnInit {
   	this.episodeId = this.route.params.value.episodeId;
   	this.episodeService.getEpisodeById(this.episodeId).subscribe(
   		serviceResponse=> {
-
   			this.episodeDetail = (({ 
   				// Object Destructuring and Property Shorthand:
   				// https://stackoverflow.com/questions/17781472/how-to-get-a-subset-of-a-javascript-objects-properties
   				season, episode, title, episodeSummary, originalAirDate, supportingCharacters, director, writer, mood }) => ({
   				season, episode, title, episodeSummary, originalAirDate, supportingCharacters, director, writer, mood }))(serviceResponse);
   		  this.mainCharacters = serviceResponse.mainCharacters;
-  		  this.tropes = serviceResponse.tropes;
-  		  this.crimesArray = serviceResponse.crimes;
-  		  () => {
-  		  	for (var i in episodeDetail){
-  		  		if episodeDetail.hasOwnProperty(i) {
-  		  			this.keys.push(i);
-  		  		}
-  		  	}
-  		  	return arr;
-  		  }
+  			this.tropes = serviceResponse.tropes;
   		}
 		)
 	}
