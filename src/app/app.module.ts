@@ -40,7 +40,6 @@ import { DirectorComponent  		} from './components/search/director/director.comp
 import { WriterComponent 				} from './components/search/writer/writer.component';
 import { CrimeComponent 				} from './components/search/crime/crime.component';
 import { TropesComponent 				} from './components/search/tropes/tropes.component';
-import { ResultsComponent 			} from './components/results/results.component';
 import { EpisodeDetailComponent } from './components/episode-detail/episode-detail.component';
 import { AboutComponent 				} from './components/about/about.component';
 
@@ -56,7 +55,6 @@ import { AboutComponent 				} from './components/about/about.component';
     WriterComponent,
     CrimeComponent,
     TropesComponent,
-    ResultsComponent,
     EpisodeDetailComponent,
     AboutComponent,
   ],

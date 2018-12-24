@@ -10,11 +10,11 @@ import { SearchResult } from '../../shared/searchResult';
 })
 export class SearchComponent implements OnInit {
 
-	searchResult: SearchResult
+	searchResult: SearchResult[];
 	errMess: string;
-	mainSearchGroup: FormGroup
-	mainCharacterValues: [];
-	tropeValues: [];
+	mainSearchGroup: FormGroup;
+	mainCharacterValues: any [];
+	tropeValues: any [];
 	emptyResult: boolean;
 
 	constructor( 
@@ -109,7 +109,7 @@ export class SearchComponent implements OnInit {
 }
 
 	ngOnInit() {
-		this.searchResult = false;
+		this.searchResult = null;
 		this.emptyResult = false;
 	}
 
@@ -172,7 +172,7 @@ export class SearchComponent implements OnInit {
 
 	resetForm() {
 		this.episodeService = this.episodeService;
-		this.searchResult = false;
+		this.searchResult = null;
 		this.emptyResult = false;
 		this.mainSearchGroup.reset({
 			'season':'',

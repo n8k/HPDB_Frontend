@@ -40,14 +40,14 @@ export class Tropes {
 	'bonVoyage': 									boolean;  // Crime scene is on a train, plane, or boat
 }
 
-export class CrimesArray [{
-	perpetrator:  string,
-	victim: 			string,
-	criminalAct:	string,
-	means: 				string,
-	motive:				string,
-	opportunity: 	string
-}];
+export class CrimesArray {
+	perpetrator:  string;
+	victim: 			string;
+	criminalAct:	string;
+	means: 				string;
+	motive:				string;
+	opportunity: 	string;
+};
 
 export class EpisodeDetail {
 	season: number;

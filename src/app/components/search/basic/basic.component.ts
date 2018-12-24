@@ -11,8 +11,8 @@ export class BasicComponent implements OnInit {
 	@Input() basic: FormGroup;
 	@Input() sharedFormErrors:{}; 
 
-	seasonErrMess: string;
-	episodeErrMess: string;
+	seasonErrMess: any;
+	episodeErrMess: any;
 
 		episodeMaxList = [
 			{	season: 1,  episodeMax: 10 },
@@ -69,8 +69,8 @@ export class BasicComponent implements OnInit {
 		}
 
 		if (season > 13 || season < 1 || isNaN(season)) {
-			err = "Only season numbers between 1-13 are valid";
 			this.basic.setErrors(true);
+			return this.seasonErrMess = "Only season numbers between 1-13 are valid";
 		}
 
 		return this.seasonErrMess = err;
@@ -78,35 +78,29 @@ export class BasicComponent implements OnInit {
 
 	episodeCheck(season,episode) {
 		this.episodeErrMess = false;
-		let err = false;
 
 		if (episode == "" || undefined) {
-			err = false;
 			this.basic.setErrors(false);
 			return this.episodeErrMess = false;
 		}
 
 		if (episode < 1 || isNaN(episode)) {
-				err = "Only positive numbers are valid";
 				this.basic.setErrors(true);
-	 		return this.episodeErrMess = err;
+	 		return this.episodeErrMess = "Only positive numbers are valid";
 		}
 
 		if (episode > 11) {
-			err = "No season has more than 11 episodes";
 			this.basic.setErrors(true);
-			return this.episodeErrMess = err;
+			return this.episodeErrMess = "No season has more than 11 episodes";
 		}
 
 		if (season < 14 && season > 0 && episode) { 
 				let episodeMax = this.episodeMaxList.find(i => i.season == Number(season)).episodeMax; 
 			if (episode > episodeMax) {
-				err = "Season " + season + " has only " + episodeMax + " episodes"
 				this.basic.setErrors(true);
-				return this.episodeErrMess = err;
+				return this.episodeErrMess = "Season " + season + " has only " + episodeMax + " episodes";
 			}
 		}
-
 		}
 
 	ngOnInit() {
