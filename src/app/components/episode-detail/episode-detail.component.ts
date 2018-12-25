@@ -29,7 +29,7 @@ export class EpisodeDetailComponent implements OnInit {
   	) { }
 
   ngOnInit() {
-  	this.episodeId = this.route.params.value.episodeId;
+  	this.episodeId = this.route.params['value']['episodeId'];
   	this.episodeService.getEpisodeById(this.episodeId).subscribe(
   		serviceResponse=> {
   			this.episodeDetail = (({ 
@@ -39,6 +39,7 @@ export class EpisodeDetailComponent implements OnInit {
   				season, episode, title, episodeSummary, originalAirDate, supportingCharacters, director, writer, mood }))(serviceResponse);
   		  this.mainCharacters = serviceResponse.mainCharacters;
   			this.tropes = serviceResponse.tropes;
+  			this.crimesArray = serviceResponse.crimes;
   		}
 		)
 	}

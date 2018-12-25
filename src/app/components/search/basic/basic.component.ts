@@ -59,17 +59,16 @@ export class BasicComponent implements OnInit {
 	constructor(private controlContainer: ControlContainer) { }
 
 	seasonCheck(season) {
+		console.log(this.basic);
 		this.seasonErrMess = false;
 		let err = false;
 
 		if (season == "" || undefined) {
 			err = false;
-			this.basic.setErrors(false);
 			return this.seasonErrMess = false;
 		}
 
 		if (season > 13 || season < 1 || isNaN(season)) {
-			this.basic.setErrors(true);
 			return this.seasonErrMess = "Only season numbers between 1-13 are valid";
 		}
 
@@ -78,26 +77,22 @@ export class BasicComponent implements OnInit {
 
 	episodeCheck(season,episode) {
 		this.episodeErrMess = false;
-
 		if (episode == "" || undefined) {
-			this.basic.setErrors(false);
 			return this.episodeErrMess = false;
 		}
 
 		if (episode < 1 || isNaN(episode)) {
-				this.basic.setErrors(true);
 	 		return this.episodeErrMess = "Only positive numbers are valid";
 		}
 
 		if (episode > 11) {
-			this.basic.setErrors(true);
 			return this.episodeErrMess = "No season has more than 11 episodes";
 		}
 
 		if (season < 14 && season > 0 && episode) { 
 				let episodeMax = this.episodeMaxList.find(i => i.season == Number(season)).episodeMax; 
 			if (episode > episodeMax) {
-				this.basic.setErrors(true);
+				// this.basic.setErrors(true);
 				return this.episodeErrMess = "Season " + season + " has only " + episodeMax + " episodes";
 			}
 		}
