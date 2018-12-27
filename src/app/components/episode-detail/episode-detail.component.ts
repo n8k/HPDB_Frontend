@@ -2,10 +2,10 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { Params, ActivatedRoute } from '@angular/router';
 import { EpisodeService } from '../../services/episode.service';
-// import { EpisodeDetail } from '../../shared/episodeDetail';
-// import { MainCharacters } from '../../shared/episodeDetail';
-// import { Tropes } from '../../shared/episodeDetail';
-// import { CrimesArray } from '../../shared/episodeDetail';
+import { EpisodeDetail } from '../../shared/episodeDetail';
+import { MainCharacters } from '../../shared/episodeDetail';
+import { Tropes } from '../../shared/episodeDetail';
+import { CrimesArray } from '../../shared/episodeDetail';
 
 @Component({
   selector: 'app-episode-detail',
@@ -16,10 +16,10 @@ export class EpisodeDetailComponent implements OnInit {
 
 	episodeId: string;
 	errMess: string;
-	episodeDetail: {};
-	mainCharacters: {};
-	tropes: {};
-	crimesArray: {};
+	episodeDetail: EpisodeDetail;
+	mainCharacters: MainCharacters;
+	tropes: Tropes;
+	crimesArray: CrimesArray;
 
   constructor(
     private location: Location,
