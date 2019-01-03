@@ -59,7 +59,6 @@ export class BasicComponent implements OnInit {
 	constructor(private controlContainer: ControlContainer) { }
 
 	seasonCheck(season) {
-		console.log(this.basic);
 		this.seasonErrMess = false;
 		let err = false;
 
