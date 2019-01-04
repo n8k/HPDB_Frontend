@@ -10,5 +10,5 @@ export const routes: Routes = [
   { path: 'home',      component: SearchComponent },
   { path: 'search',    component: SearchComponent },
   { path: 'id/:episodeId',      component: EpisodeDetailComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
